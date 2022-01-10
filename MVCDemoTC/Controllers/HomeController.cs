@@ -26,5 +26,18 @@ namespace MVCDemoTC.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult form1(int txtId, string txtName, string chkAddon)
+        {
+            ViewBag.Id = txtId;
+            ViewBag.Name = txtName;
+            if (chkAddon != null)
+                ViewBag.Addon = "Selected";
+            else
+                ViewBag.Addon = "Not Slected";
+
+            return View("Index");
+        }
     }
 }
